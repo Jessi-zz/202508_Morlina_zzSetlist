@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morlina歌單</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="display" class="page">
+        <div class="fixed-header">
+            <div id="flag"></div>
+        </div>
+        <div class="song">
+            <div class="now-sing">
+                <div id="currentSong" class="current-song">
+                    <!-- 現正演唱的歌曲將在這裡顯示 -->
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="scrollable-area">
+                <div id="songList" class="song-list">
+                    <ol id="sungSongsList"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="display.js"></script>
+</body>
+</html>

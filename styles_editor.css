@@ -1,0 +1,373 @@
+@import url('./image.css');
+@font-face {
+    font-family: 'Rakque';
+    src: url('./font/Rakque.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: #2C2C2E;
+    color: #FFFFFF;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.app-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    min-width: 320px;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    padding: 24px;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page.slide-left {
+    transform: translateX(-100%);
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    height: 48px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-image: var(--svg-logo);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo-text {
+    font-family: 'Rakque', serif;
+    font-size: 24px;
+    color: #fec481;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 24px;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-btn.primary {
+    background: #fec481;
+    color: #000000;
+}
+
+.header-btn.primary:hover {
+    background: #fed49b;
+    transform: translateY(-1px);
+}
+
+.header-btn.secondary {
+    background: transparent;
+    color: #fec481;
+    border: 2px solid #fec481;
+}
+
+.header-btn.secondary:hover {
+    background: rgba(254, 196, 129, 0.1);
+}
+
+.header-btn .material-icons {
+    font-size: 20px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 80px;
+    overflow-y: auto;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-section h2 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #8E8E93;
+    margin-bottom: 4px;
+}
+
+.input-section h2::after {
+    content: attr(data-en);
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    background: rgba(11, 11, 11, 0.2);
+    border: 1px solid #454545;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+input[type="text"] {
+    height: 56px;
+}
+
+textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #fec481;
+}
+
+textarea::placeholder, input[type="text"]::placeholder {
+    color: #8E8E93;
+}
+
+/* Settings Page */
+.setting-item {
+    background: rgba(11, 11, 11, 0.2);
+    border: 1px solid #454545;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.setting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.setting-header h3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.setting-header h3::after {
+    content: attr(data-en);
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    color: #8E8E93;
+    margin-left: 8px;
+}
+
+.reset-btn {
+    background: none;
+    border: none;
+    color: #8E8E93;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.reset-btn .material-icons {
+    font-size: 20px;
+}
+
+.slider-container {
+    position: relative;
+}
+
+/* 滑桿 */
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #454545;
+    outline: none;
+    margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fec481;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(254, 196, 129, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fec481;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-track {
+    background: #454545;
+    height: 4px;
+    border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #454545;
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+}
+
+/* Footer */
+.app-footer {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    color: #8E8E93;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: 'Rakque', serif;
+    font-size: 14px;
+}
+
+.footer-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+}
+
+.footer-btn .material-icons {
+    font-size: 24px;
+}
+
+.footer-btn.credit {
+    font-family: 'Rakque', serif;
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* RWD */
+@media (min-width: 768px) {
+    .page {
+        padding: 40px;
+    }
+    
+    .app-footer {
+        bottom: 40px;
+        left: 40px;
+        right: 40px;
+    }
+    
+    .main-content {
+        gap: 32px;
+    }
+    
+    .logo-text {
+        font-size: 28px;
+    }
+    
+    .header-btn {
+        padding: 14px 28px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page {
+        padding: 60px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .app-footer {
+        bottom: 60px;
+        left: 60px;
+        right: 60px;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+}

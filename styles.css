@@ -1,0 +1,229 @@
+@import url('./image.css');
+
+@font-face {
+    font-family: 'GenSenMaruGothic';
+    src: url('./font/GENSENMARUGOTHICTW-MEDIUM.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #ffffff;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.page {
+    width: 750px;
+    height: 995px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: var(--svg-bg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.fixed-header {
+    flex-shrink: 0;
+    position: relative;
+}
+
+#flag {
+    display: flex;
+    position: absolute;
+    width: 75px;
+    height: 140px;
+    z-index: 3;
+    right: 150px;
+    top: 30px;
+    background-image: var(--svg-flag);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.song {
+    display: flex;
+    flex-direction: column;
+    width: 510px;
+    height: 750px;
+    margin: 120px auto 0 auto;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.now-sing {
+    flex-shrink: 0;
+}
+
+.current-song {
+    margin: 30px 0 0 0;
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+}
+
+.current-song .song-number {
+    width: 16px;
+    height: 16px;
+    background-image: var(--svg-cube-fill);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0px 25px 0 5px;
+}
+
+.current-song .song-text {
+    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    color: #fff8ed;
+    font-size: 52px;
+    text-shadow: 0 0 4px rgba(148, 113, 175, 1);
+    letter-spacing: 5px;
+    font-weight: 500;
+    flex-grow: 1;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+    padding-right: 0px;
+    transition: font-size 0.3s ease;
+}
+
+.divider {
+    display: none;
+    width: 100%;
+    height: 40px;
+    background-image: var(--svg-div);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.divider.show {
+    display: flex;
+}
+
+.scrollable-area {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+}
+
+.song-list {
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    padding-bottom: 50px;
+}
+
+.song-list ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.song-list li {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    min-height: 70px;
+}
+
+.song-list li:first-child {
+    margin-top: 10px;
+}
+
+.song-number {
+    width: 16px;
+    height: 16px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: var(--svg-cube-empty);
+    margin: 0px 25px 0 5px;
+}
+
+.song-text {
+    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    font-weight: 500;
+    font-size: 52px;
+    letter-spacing: 5px;
+    flex-grow: 1;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    white-space: pre-wrap !important;
+    color: #f6edff;
+    text-shadow: 0 0 4px rgba(148, 113, 175, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    line-height: 1.2;
+    transition: font-size 0.3s ease;
+}
+
+.special-format .song-number {
+    width: 30px;
+    height: 28px;
+    background-image: var(--svg-star);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0px 18px 0 0;
+}
+
+.special-format .song-text {
+    color: #ffebc9;
+}
+
+.current-song.fixed {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 760px;
+}
