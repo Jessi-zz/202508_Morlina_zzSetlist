@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'GenSenMaruGothic';
-    src: url('./font/GENSENMARUGOTHICTW-MEDIUM.ttf') format('truetype');
+    src: url('./font/GENSENMARUGOTHICTW-MEDIUM.TTF') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -226,4 +226,5 @@ body {
     transform: translateX(-50%);
     width: calc(100% - 40px);
     max-width: 760px;
+
 }
