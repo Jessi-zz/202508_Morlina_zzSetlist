@@ -1,14 +1,14 @@
 @import url('./image.css');
 
 @font-face {
-    font-family: 'GenSenMaruGothic';
+    font-family: 'GenSenMaruGothic TW TTF Medium';
     src: url('./font/GENSENMARUGOTHICTW-MEDIUM.TTF') format('truetype');
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
 }
 
 body {
-    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    font-family: 'GenSenMaruGothic TW TTF Medium', 'Noto Serif TC', serif;
     margin: 0;
     padding: 0;
     background-color: transparent;
@@ -97,7 +97,7 @@ body {
 }
 
 .current-song .song-text {
-    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    font-family: 'GenSenMaruGothic TW TTF Medium', 'Noto Serif TC', serif;
     color: #fff8ed;
     font-size: 52px;
     text-shadow: 0 0 4px rgba(148, 113, 175, 1);
@@ -186,7 +186,7 @@ body {
 }
 
 .song-text {
-    font-family: 'GenSenMaruGothic', 'Noto Serif TC', serif;
+    font-family: 'GenSenMaruGothic TW TTF Medium', 'Noto Serif TC', serif;
     font-weight: 500;
     font-size: 52px;
     letter-spacing: 5px;
@@ -228,4 +228,5 @@ body {
     max-width: 760px;
 
 }
+
 
