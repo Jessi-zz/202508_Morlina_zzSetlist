@@ -14,7 +14,7 @@
 
 body {
     font-family: 'Noto Sans TC', sans-serif;
-    background: #2C2C2E;
+    background: #272a33;
     color: #FFFFFF;
     height: 100vh;
     overflow: hidden;
@@ -370,4 +370,5 @@ input[type="range"]::-moz-range-track {
         max-width: 680px;
         margin: 0 auto;
     }
+
 }
